@@ -1,20 +1,19 @@
 Summary:	MagickWand ImageMagick API for PHP
 Name:		MagickWandForPHP
 Version:	1.0.5
-Release:	0.1
-License:	GPL
+Release:	1
+License:	see LICENSE file
 Group:		Libraries
 Source0:	http://www.magickwand.org/download/php/%{name}-%{version}.tar.bz2
 # Source0-md5:	b52a5b7cf4db7078fa3db4cb6e55ecf4
 Source1:	%{name}.ini
-URL:		http://eaccelerator.net/
+URL:		http://www.magickwand.org/
 BuildRequires:	ImageMagick-devel >= 6.3.5.9
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.344
 %requires_eq	php-common
 %{?requires_php_extension}
 Requires:	php-common >= 4:5.0.4
-#Requires:	php-zlib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_webapps	/etc/webapps
@@ -40,11 +39,10 @@ phpize
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{_bindir},%{php_sysconfdir}/conf.d,%{_sysconfdir},%{_appdir}}
+install -d $RPM_BUILD_ROOT{%{php_extensiondir},%{php_sysconfdir}/conf.d}
 
-#install modules/eaccelerator.so $RPM_BUILD_ROOT%{php_extensiondir}
-#install eLoader/modules/eloader.so $RPM_BUILD_ROOT%{php_extensiondir}
-#install %{SOURCE1} $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_name}.ini
+install modules/magickwand.so $RPM_BUILD_ROOT%{php_extensiondir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_name}.ini
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,7 +57,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-#%doc AUTHORS ChangeLog NEWS README README.eLoader bugreport.php doc/php
-#%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{_name}.ini
-#%attr(755,root,root) %{php_extensiondir}/eaccelerator.so
-#%attr(755,root,root) %{php_extensiondir}/eloader.so
+%doc AUTHOR CREDITS ChangeLog LICENSE README TODO run-tests.php
+%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{_name}.ini
+%attr(755,root,root) %{php_extensiondir}/magickwand.so
