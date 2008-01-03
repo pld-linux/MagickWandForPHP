@@ -1,4 +1,5 @@
 Summary:	MagickWand ImageMagick API for PHP
+Summary(pl.UTF-8):	API ImageMagick MagickWand dla PHP
 Name:		MagickWandForPHP
 Version:	1.0.5
 Release:	1
@@ -22,10 +23,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_appdir		%{_datadir}/%{_webapp}
 
 %description
-The MagickWand API is the recommended interface between the C programming
-language and the ImageMagick image processing libraries. Unlike the
-MagickCore C API, MagickWand uses only a few opaque types. Accessors are
-available to set or get important wand properties.
+The MagickWand API is the recommended interface between the C
+programming language and the ImageMagick image processing libraries.
+Unlike the MagickCore C API, MagickWand uses only a few opaque types.
+Accessors are available to set or get important wand properties.
+
+%description -l pl.UTF-8
+API MagickWand jest zalecanym interfejsem między językiem C a
+bibliotekami przetwarzania obrazu ImageMagick. W przeciwieństwie do
+API C MagickCore, MagickWand używa tylko kilku nieprzejrzystych typów.
+Dostępne są funkcje dostępowe do ustawiania i pobierania istotnych
+właściwości wand.
 
 %prep
 %setup -q
