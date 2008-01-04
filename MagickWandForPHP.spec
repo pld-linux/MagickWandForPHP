@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	API ImageMagick MagickWand dla PHP
 Name:		MagickWandForPHP
 Version:	1.0.5
 Release:	1
-License:	see LICENSE file
+License:	ImageMagick (Apache-like)
 Group:		Libraries
 Source0:	http://www.magickwand.org/download/php/%{name}-%{version}.tar.bz2
 # Source0-md5:	b52a5b7cf4db7078fa3db4cb6e55ecf4
