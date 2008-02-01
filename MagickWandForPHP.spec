@@ -1,3 +1,4 @@
+# - see php-magickwand.spec
 Summary:	MagickWand ImageMagick API for PHP
 Summary(pl.UTF-8):	API ImageMagick MagickWand dla PHP
 Name:		MagickWandForPHP
@@ -16,11 +17,6 @@ BuildRequires:	rpmbuild(macros) >= 1.344
 %{?requires_php_extension}
 Requires:	php-common >= 4:5.0.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_webapps	/etc/webapps
-%define		_webapp		%{_name}
-%define		_sysconfdir	%{_webapps}/%{_webapp}
-%define		_appdir		%{_datadir}/%{_webapp}
 
 %description
 The MagickWand API is the recommended interface between the C
